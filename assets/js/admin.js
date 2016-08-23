@@ -68,7 +68,7 @@
                         url = image.url;
                     }
 
-                    images += _.template(template, {
+                    images += _.template(template)({
                         url: url,
                         id: image.id
                     });
@@ -147,7 +147,7 @@
 
             model.fetch({
                 success: function(model, resp) {
-                    var tpl = _.template( $('#wegal-tmpl-image-editor').html(), {image: resp} );
+                    var tpl = _.template( $('#wegal-tmpl-image-editor').html())({image: resp} );
                     $('#wegal-ajax-content').html(tpl);
                 },
 
